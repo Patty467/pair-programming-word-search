@@ -20,7 +20,7 @@ describe("#wordSearch()", function() {
     assert.isFalse(result);
   });
 
-  it("should return true if the word is present", function() {
+  it("should return true if the word is present (Horizontal)", function() {
     const result = wordSearch([
       ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
       ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
@@ -35,4 +35,27 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+
+  it("should return true if the word is present (Vertical)", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
+      ['B', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['I', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['L', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['L', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'BILL')
+
+    assert.isTrue(result);
+  });
+
+  it("should return 'Error: empty array' if array is empty", function() {
+    const result = wordSearch([], 'BILL')
+
+    assert.equal('Error: empty array', result);
+  });
+
 });
